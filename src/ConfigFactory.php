@@ -88,6 +88,55 @@ final class ConfigFactory {
 			// type declarations:  ?callable $fn, function f(): bool
 			'nullable_type_declaration' => true,
 			'return_type_declaration' => ['space_before' => 'none'],
+			'compact_nullable_type_declaration' => true,
+			// PHP 8.4 deprecates implicit nullable:  string $x = null  →  ?string $x = null
+			'nullable_type_declaration_for_default_null_value' => true,
+
+			// other operators:  !$a, ...$args, (string) $x, 'a' . $b, $a ? $b : $c, $obj->prop
+			'unary_operator_spaces' => true,
+			'cast_spaces' => true,
+			'concat_space' => ['spacing' => 'one'],
+			'ternary_operator_spaces' => true,
+			'object_operator_without_whitespace' => true,
+			'no_spaces_around_offset' => true,
+			'ternary_to_null_coalescing' => true,
+
+			// control structures:  elseif, for( $i = 0; $i < $n; $i++ ), case 'x':
+			'elseif' => true,
+			'space_after_semicolon' => true,
+			'no_singleline_whitespace_before_semicolons' => true,
+			'switch_case_space' => true,
+			'switch_case_semicolon_to_colon' => true,
+			'no_multiple_statements_per_line' => true,
+			'no_empty_statement' => true,
+			'include' => true,
+
+			// casing:  true/false/null, keywords, casts, magic constants, native functions and classes
+			'constant_case' => true,
+			'lowercase_keywords' => true,
+			'lowercase_cast' => true,
+			'short_scalar_cast' => true,
+			'magic_constant_casing' => true,
+			'native_function_casing' => true,
+			'integer_literal_case' => true,
+			'class_reference_name_casing' => true,
+
+			// strings:  "Guest #{$guest->id}"
+			'explicit_string_variable' => true,
+
+			// list() → [ $a, $b ] = …
+			'list_syntax' => true,
+
+			// class members:  explicit visibility, one property/constant per statement
+			'modifier_keywords' => true,
+			'single_class_element_per_statement' => true,
+
+			// file structure:  open tag, blank line, code; no closing tag in pure-PHP files
+			'full_opening_tag' => true,
+			'blank_line_after_opening_tag' => true,
+			'no_closing_tag' => true,
+			'blank_line_after_namespace' => true,
+			'single_line_after_imports' => true,
 
 			// whitespace hygiene
 			'no_trailing_whitespace' => true,
