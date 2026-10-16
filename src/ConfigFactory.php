@@ -24,9 +24,21 @@ final class ConfigFactory {
 			'indentation_type' => true,
 			'single_quote' => true,
 
+			// indentation depth — indentation_type only picks tabs over spaces
+			// statement_indentation also puts `case` one level inside `switch`
+			'statement_indentation' => true,
+			'array_indentation' => true,
+			'method_chaining_indentation' => true,
+
 			// arrays
 			'array_syntax' => ['syntax' => 'short'],
 			'no_trailing_comma_in_singleline' => true,
+
+			// commas — none before, one after:  foo( $a, $b ), ['a', 'b']
+			// on_multiline ignore: fix comma spacing only, leave argument-list wrapping alone
+			'method_argument_space' => ['on_multiline' => 'ignore'],
+			'whitespace_after_comma_in_array' => true,
+			'no_whitespace_before_comma_in_array' => true,
 
 			// declare — strict_types is added manually per file (see CLAUDE.md); only normalise spacing when it already exists
 			'declare_equal_normalize' => ['space' => 'single'],
@@ -72,6 +84,10 @@ final class ConfigFactory {
 
 			// union/intersection type spacing:  null | int | \DateInterval
 			'types_spaces' => ['space' => 'single'],
+
+			// type declarations:  ?callable $fn, function f(): bool
+			'nullable_type_declaration' => true,
+			'return_type_declaration' => ['space_before' => 'none'],
 
 			// whitespace hygiene
 			'no_trailing_whitespace' => true,
